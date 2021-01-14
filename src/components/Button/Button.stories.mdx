@@ -1,0 +1,34 @@
+<!-- Button.stories.mdx-->
+
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import Button from './Button';
+
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: ['fill', 'outline', 'ghost'],
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large'],
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+<Story
+  name="Primary"
+  args={{ children: 'Button', variant: 'fill', size: 'medium' }}
+>
+  {Template.bind({})}
+</Story>
