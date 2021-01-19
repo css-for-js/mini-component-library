@@ -1,0 +1,43 @@
+import styled from 'styled-components';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import Select from './Select';
+
+<Meta
+  title="Select"
+  component={Select}
+  argTypes={{
+    value: {
+      control: {
+        type: 'number',
+        min: 0,
+        max: 100,
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large'],
+      },
+    },
+  }}
+/>
+
+# Select
+
+export const ManagedSelect = () => {
+  const [value, setValue] = React.useState('');
+  return (
+    <Select
+      value={value}
+      onChange={(ev) => setValue(ev.target.value)}
+    >
+      <option value="newest">Newest Releases</option>
+      <option value="price">Price</option>
+      <option value="curated">Curated</option>
+    </Select>
+  );
+};
+
+<Story name="Default">
+  <ManagedSelect />
+</Story>
