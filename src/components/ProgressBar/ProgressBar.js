@@ -37,13 +37,17 @@ const ProgressBar = ({ value, size }) => {
       aria-valuemin="0"
       aria-valuemax="100"
       style={{
-        '--barHeight': styles.barHeight + 'px',
         '--containerRadius': styles.containerRadius + 'px',
         '--containerPadding': padding + 'px',
       }}
     >
       <BarWrapper>
-        <Bar style={{ '--width': value + '%' }} />
+        <Bar
+          style={{
+            '--width': value + '%',
+            '--barHeight': styles.barHeight + 'px',
+          }}
+        />
       </BarWrapper>
     </Wrapper>
   );

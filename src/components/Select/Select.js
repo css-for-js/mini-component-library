@@ -5,7 +5,6 @@ import { COLORS } from '../../constants';
 import Icon from '../Icon';
 
 const Select = ({ label, value, children, ...delegated }) => {
-  console.log(label, value, children);
   const childArray = React.Children.toArray(children);
   const selectedChild = childArray.find(
     (child) => child.props.value === value
@@ -22,21 +21,14 @@ const Select = ({ label, value, children, ...delegated }) => {
 
         <DisplayedBit>
           {displayedValue}
-          <ChevronIcon
-            id="chevron-down"
-            size={24}
-            strokeWidth={1.5}
-          />
+          <ChevronIcon id="chevron-down" size={24} strokeWidth={2} />
         </DisplayedBit>
       </SelectWrapper>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.label`
-  display: flex;
-  align-items: baseline;
-`;
+const Wrapper = styled.label``;
 
 const VisibleLabel = styled.span`
   margin-right: 16px;
@@ -44,6 +36,7 @@ const VisibleLabel = styled.span`
 
 const SelectWrapper = styled.div`
   position: relative;
+  display: inline-block;
 `;
 
 const NativeSelect = styled.select`
@@ -61,13 +54,19 @@ const NativeSelect = styled.select`
 const DisplayedBit = styled.span`
   display: block;
   font-size: 1rem;
-  padding: 12px 42px 12px 16px;
+  padding: 12px 52px 12px 16px;
   border-radius: 8px;
   pointer-events: none;
+  color: ${COLORS.gray700};
+  background-color: ${COLORS.transparentGray15};
 
   ${NativeSelect}:focus ~ & {
     outline: 1px dotted #212121;
     outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  ${NativeSelect}:hover ~ & {
+    color: ${COLORS.black};
   }
 `;
 

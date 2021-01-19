@@ -27,6 +27,7 @@ export const ManagedSelect = () => {
   const [value, setValue] = React.useState('newest');
   return (
     <Select
+      label="Sort"
       value={value}
       onChange={(ev) => setValue(ev.target.value)}
     >
