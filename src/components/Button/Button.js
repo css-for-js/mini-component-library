@@ -1,33 +1,84 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FONT_SIZES = {
-  small: 18 / 16 + 'rem',
-  medium: 21 / 16 + 'rem',
-  large: 24 / 16 + 'rem',
-};
-const PADDINGS = {
-  small: '16px 24px',
-  medium: '20px 36px',
-  large: '26px 48px',
+import { COLORS } from '../../constants';
+
+const SIZE_STYLES = {
+  small: {
+    '--height': '52px',
+    '--padding': '0 24px',
+    '--font-size': 18 / 16 + 'rem',
+    '--border-radius': '2px',
+  },
+  medium: {
+    '--height': '65px',
+    '--padding': '0 36px',
+    '--font-size': 21 / 16 + 'rem',
+    '--border-radius': '4px',
+  },
+  large: {
+    '--height': '80px',
+    '--padding': '0 48px',
+    '--font-size': 24 / 16 + 'rem',
+    '--border-radius': '6px',
+  },
 };
 
-const Button = ({ type, size, children }) => {
-  return (
-    <ButtonBase
-      style={{
-        '--font-size': FONT_SIZES[size],
-        '--padding': PADDINGS[size],
-      }}
-    >
-      hi
-    </ButtonBase>
-  );
+const Button = ({ variant, size, children }) => {
+  const Component =
+    variant === 'fill'
+      ? FillButton
+      : variant === 'outline'
+      ? OutlineButton
+      : GhostButton;
+
+  const styles = SIZE_STYLES[size];
+
+  return <Component style={styles}>{children}</Component>;
 };
 
 const ButtonBase = styled.button`
-  font-size: var(--font-size);
+  display: block;
+  height: var(--height);
   padding: var(--padding);
+  font-size: var(--font-size);
+  border-radius: var(--border-radius);
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+  outline-offset: 3px;
+  box-sizing: border-box;
+`;
+
+const FillButton = styled(ButtonBase)`
+  background: ${COLORS.primary};
+  color: ${COLORS.white};
+  outline-color: ${COLORS.primary};
+
+  &:hover {
+    background: ${COLORS.primaryLight};
+  }
+`;
+
+const OutlineButton = styled(ButtonBase)`
+  background: ${COLORS.white};
+  border: 2px solid ${COLORS.primary};
+  color: ${COLORS.primary};
+  outline-color: ${COLORS.primary};
+
+  &:hover {
+    background: ${COLORS.offwhite};
+  }
+`;
+
+const GhostButton = styled(ButtonBase)`
+  color: ${COLORS.gray};
+  outline-color: ${COLORS.gray};
+
+  &:hover {
+    background: ${COLORS.transparentGray15};
+    color: ${COLORS.black};
+  }
 `;
 
 export default Button;
