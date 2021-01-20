@@ -22,6 +22,11 @@ import IconInput from './IconInput';
         options: ['small', 'large'],
       },
     },
+    label: {
+      control: {
+        type: 'text',
+      },
+    },
   }}
 />
 
@@ -31,7 +36,12 @@ export const Template = (args) => <IconInput {...args} />;
 
 <Story
   name="Default"
-  args={{ placeholder: 'Search…', icon: 'search', size: 'small' }}
+  args={{
+    placeholder: 'Search…',
+    label: 'Search',
+    icon: 'search',
+    size: 'small',
+  }}
 >
   {Template.bind({})}
 </Story>
