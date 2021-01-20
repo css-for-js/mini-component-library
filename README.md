@@ -13,6 +13,8 @@ Two fully-formed components have already been included, to be used as-needed in 
 - `Icon`, an icon component that uses `react-feather` to render various icons
 - `VisuallyHidden`, a component that allows us to make text available to screen-reader users, but not to sighted users.
 
+Additionally, all of the colors you'll need are indexed in `constants.js`.
+
 All components in this project use [the `Roboto` font](https://fonts.google.com/specimen/Roboto). This font is already included in the Storybook environment, and is already applied to all elements. It comes in two weights:
 
 - 400 (default)
