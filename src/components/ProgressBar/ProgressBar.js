@@ -7,12 +7,13 @@ import VisuallyHidden from "../VisuallyHidden";
 
 const Wrapper = styled.div`
   position: relative;
-  width: 370px;
-  height: 24px;
-  border-radius: 8px;
+  width: 50%;
   background-color: ${COLORS.transparentGray15};
   box-shadow: inset 0px 2px 4px rgba(128, 128, 128, 0.35);
-  padding: 4px;
+
+  height: var(--height);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
 `;
 
 const BarContainer = styled.div`
@@ -32,7 +33,17 @@ const Bar = styled.div`
 
 const ProgressBar = ({ value, size }) => {
   return (
-    <Wrapper>
+    <Wrapper
+      role="progressbar"
+      aria-valuenow={value}
+      aria-valuemin="0"
+      aria-valuemax="100"
+      style={{
+        "--height": { large: "24px", medium: "12px", small: "8px" }[size],
+        "--padding": { large: "4px", medium: "0", small: "0" }[size],
+        "--border-radius": { large: "8px", medium: "4px", small: "4px" }[size],
+      }}
+    >
       <BarContainer>
         <VisuallyHidden>{`Progress: ${value}%`} </VisuallyHidden>
         <Bar value={value}></Bar>
