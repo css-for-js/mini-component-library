@@ -20,7 +20,23 @@ All components in this project use [the `Roboto` font](https://fonts.google.com/
 - 400 (default)
 - 700 (bold)
 
-## ProgressBar
+## Running Storybook
+
+This project uses Storybook, a component development tool.
+
+First, install dependencies with `npm install` or `yarn install`.
+
+Once dependencies are installed, you can start storybook by running:
+
+```
+npm run start
+```
+
+Once running, you can visit storybook at http://localhost:6006.
+
+## The Components
+
+### ProgressBar
 
 The figma document mentions that this component should be "accessible". You can learn how to build a semantically-valid, accessible progress-bar component by reading this doc: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_progressbar_role
 
@@ -32,7 +48,7 @@ box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
 
 We'll learn much more about the `box-shadow` property in future modules =)
 
-## Select
+### Select
 
 The Select component will need a down-arrow icon! You can use the `chevron-down` ID with the `Icon` component.
 
@@ -40,7 +56,7 @@ We want to use a native `<select>` tag in this component, so a bit of precursory
 
 This component also includes a function, `getDisplayedValue`. This component uses some React APIs to work out the text that should be displayed. The value isn't currently used, but you can make use of it if needed, depending on your implementation.
 
-## IconInput
+### IconInput
 
 This component also uses the `Icon` component — the specific ID will be provided as a prop.
 
