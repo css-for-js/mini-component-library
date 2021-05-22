@@ -24,7 +24,7 @@ All components in this project use [the `Roboto` font](https://fonts.google.com/
 
 This project uses Storybook, a component development tool.
 
-First, install dependencies with `npm install` or `yarn install`.
+First, install dependencies with `npm install`.
 
 Once dependencies are installed, you can start storybook by running:
 
