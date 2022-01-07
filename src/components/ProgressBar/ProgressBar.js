@@ -20,28 +20,44 @@ const SIZES = {
   },
 };
 
-const OuterWrapper = styled.div`
+const OuterWrapper = styled.div.attrs((props) => ({
+  role: "progressbar",
+  "aria-valuenow": `${props.value}`,
+  "aria-valuemin": "0",
+  "aria-valuemax": "100", // Every <Button /> will now have type="button" as default
+}))`
   width: 100%;
   height: var(--height);
   padding: var(--padding);
   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
   background-color: ${COLORS.transparentGray15};
   border-radius: 4px;
+  position: relative;
 `;
 
-const InnerWrapper = styled.div`
+const ProgressMask = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${COLORS.primary};
-  content: "";
   border-radius: 4px;
+  overflow-x: hidden;
+`;
+
+const Progress = styled.div`
+  height: 100%;
+  width: ${(props) => `${props.value}%`};
+  transition: width 0.3s;
+  background-color: ${COLORS.primary};
 `;
 
 const ProgressBar = ({ value, size }) => {
   const selectedStyle = SIZES[size];
+  const resolvedValue =
+    typeof value !== "number" || value < 0 ? 0 : value > 100 ? 100 : value;
   return (
-    <OuterWrapper style={selectedStyle}>
-      <InnerWrapper>&nbsp;</InnerWrapper>
+    <OuterWrapper style={selectedStyle} value={resolvedValue}>
+      <ProgressMask>
+        <Progress value={resolvedValue} />
+      </ProgressMask>
     </OuterWrapper>
   );
 };
