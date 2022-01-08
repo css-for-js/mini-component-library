@@ -12,14 +12,17 @@ const SIZES = {
   large: {
     "--height": "24px",
     "--padding": "4px",
+    "--outer-border-radius": "8px",
   },
   medium: {
     "--height": "12px",
     "--padding": 0,
+    "--outer-border-radius": "4px",
   },
   small: {
     "--height": "8px",
     "--padding": 0,
+    "--outer-border-radius": "4px",
   },
 };
 
@@ -34,7 +37,7 @@ const OuterWrapper = styled.div.attrs((props) => ({
   padding: var(--padding);
   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
   background-color: ${COLORS.transparentGray15};
-  border-radius: 4px;
+  border-radius: var(--outer-border-radius);
   position: relative;
 `;
 
