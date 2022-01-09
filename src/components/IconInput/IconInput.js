@@ -24,13 +24,9 @@ const SIZES = {
   },
 };
 
-const Wrapper = styled.div`
-  border-left: 0;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: var(--line-weight) solid ${COLORS.black};
+const Label = styled.label`
+  display: block;
   position: relative;
-
   &:focus {
     outline: 5px auto black;
   }
@@ -38,16 +34,22 @@ const Wrapper = styled.div`
 
 const Input = styled.input`
   position: absolute;
-  left: var(--input-left);
-  bottom: 0;
-  right: 0%;
-  outline: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  outline-offset: 3px;
+  padding-left: var(--input-left);
   font-weight: var(--font-weight);
-  border: none;
   font-size: var(--font-size);
 `;
 
 const IconWrapper = styled(Icon)`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: var(--icon-size);
   height: var(--icon-size);
   padding-bottom: 4px;
@@ -59,7 +61,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
     throw new Error("Improper style passed");
   }
   return (
-    <Wrapper
+    <Label
       style={{
         "--line-weight": style.lineWeight + "px",
         "--input-left": style.inputLeft + "px",
@@ -68,9 +70,9 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
         "--icon-size": style.iconSize,
       }}
     >
-      <IconWrapper id={icon} size={style.iconSize} />
       <Input type="text" />
-    </Wrapper>
+      <IconWrapper id={icon} size={style.iconSize} />
+    </Label>
   );
 };
 
