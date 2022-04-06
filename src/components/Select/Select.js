@@ -10,7 +10,12 @@ const Select = ({ label, value, onChange, children }) => {
 
   return (
     <Wrapper>
-      <NativeSelect value={value} onChange={onChange}>
+      <VisuallyHidden>
+        <label htmlFor={label}>
+          {label}
+        </label>
+      </VisuallyHidden>
+      <NativeSelect value={value} onChange={onChange} id={label}>
         {children}
       </NativeSelect>
       <PresentationalBit>
