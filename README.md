@@ -34,6 +34,27 @@ npm run start
 
 Once running, you can visit storybook at http://localhost:6006.
 
+## Troubleshooting
+
+You may get an error when running the `start` script that looks like this:
+
+```
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:67:19)
+    at Object.createHash (node:crypto:130:10)
+```
+
+You can fix this issue either by downgrading to Node 16, or by updating the `package.json` file as follows:
+
+```diff
+  "scripts": {
+-   "start": "start-storybook -p 6006 -s public",
++   "start": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 -s public",
+  },
+```
+
+For more info, check out the [Troubleshooting Guide](https://courses.joshwcomeau.com/troubleshooting) on the course platform.
+
 ## The Components
 
 ### ProgressBar
