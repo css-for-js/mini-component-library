@@ -77,6 +77,21 @@ We want to use a native `<select>` tag in this component, so a bit of precursory
 
 This component also includes a function, `getDisplayedValue`. This component uses some React APIs to work out the text that should be displayed. The value isn't currently used, but you can make use of it if needed, depending on your implementation.
 
+> **NOTE:** Hiding the built-in chevron
+>
+> The <select> tag has a built-in chevron (downward-pointing
+> character), but it's inconsistent between browsers. We want to
+> use the provided “chevron-down” icon. But how do we replace the
+> default built-in one??
+>
+> This is something we haven't learned how to do, and so you'll need
+> to do some googling + experimentation. I want you to get a bit
+> of practice trying to tackle “unconventional” challenges like this!
+>
+> If you get stuck and/or would like a hint, you'll find one on
+> the solution page:
+> https://courses.joshwcomeau.com/css-for-js/03-components/19-workshop-select#select
+
 ### IconInput
 
 This component also uses the `Icon` component — the specific ID will be provided as a prop.
