@@ -33,13 +33,13 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.2.7",
-    "@storybook/addon-controls": "6.2.7",
-    "@storybook/addon-essentials": "6.2.7",
-    "@storybook/addon-links": "6.2.7",
-    "@storybook/node-logger": "6.2.7",
+    "@storybook/addon-actions": "6.5.15",
+    "@storybook/addon-controls": "6.5.15",
+    "@storybook/addon-essentials": "6.5.15",
+    "@storybook/addon-links": "6.5.15",
+    "@storybook/node-logger": "6.5.15",
     "@storybook/preset-create-react-app": "3.1.7",
-    "@storybook/react": "6.2.7",
+    "@storybook/react": "6.5.15",
     "webpack": "4.44.2"
   }
 }
