@@ -5,12 +5,12 @@ import { COLORS } from '../../constants';
 import Icon from '../Icon';
 import { getDisplayedValue } from './Select.helpers';
 
-const Select = ({ label, value, onChange, children }) => {
+const Select = ({ id, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
 
   return (
     <Wrapper>
-      <NativeSelect value={value} onChange={onChange}>
+      <NativeSelect id={id} value={value} onChange={onChange}>
         {children}
       </NativeSelect>
       <PresentationalBit>
