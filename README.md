@@ -79,7 +79,7 @@ This component also includes a function, `getDisplayedValue`. This component use
 
 > **NOTE:** Hiding the built-in chevron
 >
-> The <select> tag has a built-in chevron (downward-pointing
+> The `<select>` tag has a built-in chevron (downward-pointing
 > character), but it's inconsistent between browsers. We want to
 > use the provided “chevron-down” icon. But how do we replace the
 > default built-in one??
