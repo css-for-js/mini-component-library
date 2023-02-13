@@ -72,7 +72,6 @@ const Bar = styled.div`
   width: var(--width);
   height: var(--height);
   background-color: ${COLORS.primary};
-  border-radius: 4px 0 0 4px;
 `;
 
 export default ProgressBar;
