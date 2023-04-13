@@ -8,3 +8,4 @@ export const COLORS = {
   transparentGray15: 'hsl(0deg 0% 50% / 0.15)',
   transparentGray35: 'hsl(0deg 0% 50% / 0.35)',
 };
+
