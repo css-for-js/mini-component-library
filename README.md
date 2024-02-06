@@ -48,8 +48,8 @@ You can fix this issue either by downgrading to Node 16, or by updating the `pac
 
 ```diff
   "scripts": {
--   "start": "start-storybook -p 6006 -s public",
-+   "start": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 -s public",
+-   "start": "start-storybook -p 6006 -s public"
++   "start": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 -s public"
   },
 ```
 
