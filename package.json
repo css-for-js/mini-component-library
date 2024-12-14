@@ -12,7 +12,8 @@
     "styled-components": "5.2.1"
   },
   "scripts": {
-    "start": "start-storybook -p 6006 -s public"
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 -s public",
+    "start": "npm run dev"
   },
   "eslintConfig": {
     "extends": [
