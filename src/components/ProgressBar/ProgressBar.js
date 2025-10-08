@@ -8,6 +8,7 @@ import VisuallyHidden from "../VisuallyHidden";
 const ProgressBar = ({ value, size }) => {
   return (
     <ProgressWrapper size={size} role="progressbar" aria-valuenow={value}>
+      <VisuallyHidden>{value}%</VisuallyHidden>
       <ProgressIndicator value={value} size={size} />
     </ProgressWrapper>
   );
